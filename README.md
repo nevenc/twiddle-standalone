@@ -20,17 +20,17 @@ For additional help on JMX Remote API, see [JSR-160 Java Management Extensions (
 
 ## Installation
 
-1. Download the twiddle-standalone.zip from github.
+Download the twiddle-standalone.zip from github.
 
-2. Unzip twiddle-standalone.zip to your preferred directory, e.g.
+Unzip twiddle-standalone.zip to your preferred directory, e.g.
 
     /opt/twiddle-standalone
 
-3. Optionally, you can set `TWIDDLE_HOME` environment variable, e.g. 
+Optionally, you can set `TWIDDLE_HOME` environment variable, e.g. 
 
     export TWIDDLE_HOME=/opt/twiddle-standalone
 
-4. Also, you can add `TWIDDLE_HOME/bin` to your path, e.g.
+Also, you can add `TWIDDLE_HOME/bin` to your path, e.g.
 
     export PATH=$PATH:$TWIDDLE_HOME/bin
 
@@ -57,28 +57,28 @@ Also, if you added `TWIDDLE_HOME/bin` to your path, you could run twiddle direct
 
 Here is a list of some useful commands that you could use in newest JBoss AS 7.x and JBoss EAP 6.x:
 
-* To shutdown server instance, e.g.
+To shutdown server instance, e.g.
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:management-root=server shutdown false
 
-* To restart server instance, e.g.
+To restart server instance, e.g.
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:management-root=server shutdown true
 
-* To read configuration as XML, e.g.
+To read configuration as XML, e.g.
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:management-root=server readConfigAsXml
 
-* To generate JBoss Diagnostic Reporter (JDR) report, e.g. 
+To generate JBoss Diagnostic Reporter (JDR) report, e.g. 
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:subsystem=jdr genrateJdrReport
 
-* To get a list of all services in JBoss MSC, e.g.
+To get a list of all services in JBoss MSC, e.g.
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.msc:type=container,name=jboss-as dumpServicesToString
 
-* To list everything in JNDI, e.g.
+To list everything in JNDI, e.g.
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:subsystem=naming jndiView
 
-* To list all datasource drivers, e.g.
+To list all datasource drivers, e.g.
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:subsystem=datasources installedDriverList
 
-* To get various statistics on ExampleDS datasource, e.g. 
+To get various statistics on ExampleDS datasource, e.g. 
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 get jboss.as:subsystem=datasources,data-source=ExampleDS,statistics=pool ActiveCount
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 get jboss.as:subsystem=datasources,data-source=ExampleDS,statistics=pool AvailableCount
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 get jboss.as:subsystem=datasources,data-source=ExampleDS,statistics=pool AverageBlockingTime
@@ -93,7 +93,7 @@ Here is a list of some useful commands that you could use in newest JBoss AS 7.x
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 get jboss.as:subsystem=datasources,data-source=ExampleDS,statistics=pool TotalBlockingTime
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 get jboss.as:subsystem=datasources,data-source=ExampleDS,statistics=pool TotalCreationTime
 
-* To set various options on deployment scanner, e.g.
+To set various options on deployment scanner, e.g.
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 set jboss.as:subsystem=deployment-scanner,scanner=default scanEnabled true
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 set jboss.as:subsystem=deployment-scanner,scanner=default scanEnabled false
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 set jboss.as:subsystem=deployment-scanner,scanner=default scanInterval 60000
