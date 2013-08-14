@@ -58,27 +58,35 @@ Also, if you added `TWIDDLE_HOME/bin` to your path, you could run twiddle direct
 Here is a list of some useful commands that you could use in newest JBoss AS 7.x and JBoss EAP 6.x:
 
 To shutdown server instance, e.g.
+
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:management-root=server shutdown false
 
 To restart server instance, e.g.
+
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:management-root=server shutdown true
 
 To read configuration as XML, e.g.
+
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:management-root=server readConfigAsXml
 
 To generate JBoss Diagnostic Reporter (JDR) report, e.g. 
+
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:subsystem=jdr genrateJdrReport
 
 To get a list of all services in JBoss MSC, e.g.
+
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.msc:type=container,name=jboss-as dumpServicesToString
 
 To list everything in JNDI, e.g.
+
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:subsystem=naming jndiView
 
 To list all datasource drivers, e.g.
+
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:subsystem=datasources installedDriverList
 
 To get various statistics on ExampleDS datasource, e.g. 
+
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 get jboss.as:subsystem=datasources,data-source=ExampleDS,statistics=pool ActiveCount
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 get jboss.as:subsystem=datasources,data-source=ExampleDS,statistics=pool AvailableCount
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 get jboss.as:subsystem=datasources,data-source=ExampleDS,statistics=pool AverageBlockingTime
@@ -94,6 +102,7 @@ To get various statistics on ExampleDS datasource, e.g.
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 get jboss.as:subsystem=datasources,data-source=ExampleDS,statistics=pool TotalCreationTime
 
 To set various options on deployment scanner, e.g.
+
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 set jboss.as:subsystem=deployment-scanner,scanner=default scanEnabled true
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 set jboss.as:subsystem=deployment-scanner,scanner=default scanEnabled false
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 set jboss.as:subsystem=deployment-scanner,scanner=default scanInterval 60000
