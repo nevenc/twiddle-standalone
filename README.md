@@ -81,10 +81,6 @@ To list everything in JNDI, e.g.
 
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:subsystem=naming jndiView
 
-To list all datasource drivers, e.g.
-
-    twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 invoke jboss.as:subsystem=datasources installedDriverList
-
 To get various statistics on ExampleDS datasource, e.g. 
 
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 get jboss.as:subsystem=datasources,data-source=ExampleDS,statistics=pool ActiveCount
