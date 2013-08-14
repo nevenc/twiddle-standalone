@@ -69,13 +69,17 @@ else
 fi
 
 # Setup the classpath
-TWIDDLE_BOOT_CLASSPATH="$TWIDDLE_HOME/bin/twiddle.jar"
+TWIDDLE_BOOT_CLASSPATH="$TWIDDLE_HOME/lib/twiddle.jar"
 
+# All libraries have been extracted from JBoss AS 7.1.1.Final modules and bin/client directory.
+# Notice that jboss-client.jar already contains org.jboss.logging and org.jboss.logmanager libraries.
 if [ "x$TWIDDLE_CLASSPATH" = "x" ]; then
     TWIDDLE_CLASSPATH="$TWIDDLE_BOOT_CLASSPATH"
     TWIDDLE_CLASSPATH="$TWIDDLE_CLASSPATH:$TWIDDLE_HOME/lib/jboss-client.jar"
-    TWIDDLE_CLASSPATH="$TWIDDLE_CLASSPATH:$TWIDDLE_HOME/lib/jboss-common-core.jar"
-    TWIDDLE_CLASSPATH="$TWIDDLE_CLASSPATH:$TWIDDLE_HOME/lib/getopt.jar"
+    TWIDDLE_CLASSPATH="$TWIDDLE_CLASSPATH:$TWIDDLE_HOME/lib/getopt-1.0.13.jar"
+    TWIDDLE_CLASSPATH="$TWIDDLE_CLASSPATH:$TWIDDLE_HOME/lib/jboss-common-core-2.2.17.GA.jar"
+    # TWIDDLE_CLASSPATH="$TWIDDLE_CLASSPATH:$TWIDDLE_HOME/lib/jboss-logging-3.1.0.GA.jar"
+    # TWIDDLE_CLASSPATH="$TWIDDLE_CLASSPATH:$TWIDDLE_HOME/lib/jboss-logmanager-1.2.2.GA.jar"
 else
     TWIDDLE_CLASSPATH="$TWIDDLE_CLASSPATH:$TWIDDLE_BOOT_CLASSPATH"
 fi
