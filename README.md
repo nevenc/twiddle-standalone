@@ -40,17 +40,20 @@ Also, you can add `TWIDDLE_HOME/bin` to your path, e.g.
 You can run twiddle as usual, e.g. 
 
     /opt/twiddle-standalone/bin/twiddle.sh -h
+    twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 help
     /opt/twiddle-standalone/bin/twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 serverinfo -l
 
 
 Optionally, if you added `TWIDDLE_HOME` to your environment variables, you could run twiddle as:
 
     $TWIDDLE_HOME/bin/twiddle.sh -h
+    twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 help
     $TWIDDLE_HOME/bin/twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 serverinfo -l
 
 Also, if you added `TWIDDLE_HOME/bin` to your path, you could run twiddle directly, e.g.
 
     twiddle.sh -h
+    twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 help
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 serverinfo -l
 
 ## Useful Commands
@@ -105,6 +108,17 @@ To set various options on deployment scanner, e.g.
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 set jboss.as:subsystem=deployment-scanner,scanner=default autoDeployZipped false
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 set jboss.as:subsystem=deployment-scanner,scanner=default autoDeployExploded false
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 set jboss.as:subsystem=deployment-scanner,scanner=default autoDeployXml false
+
+To list all available domains (for this MBean server), e.g.  
+    twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 listDomains
+
+To list all available MBeans on this server, e.g.
+    twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 serverinfo -l
+
+To get information on particular MBean, e.g.
+    twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 info jboss.as:management-root=server
+
+
 
 Feel free to add to the list.
 
