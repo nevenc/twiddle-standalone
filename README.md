@@ -118,7 +118,8 @@ To list all available MBeans on this server, e.g.
 To get information on particular MBean, e.g.
     twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 info jboss.as:management-root=server
 
-
+To get information on particular MBean in XML format, e.g.
+    twiddle.sh --server service:jmx:remoting-jmx://localhost:9999 xmbean jboss.as:management-root=server
 
 Feel free to add to the list.
 

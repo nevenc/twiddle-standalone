@@ -7,12 +7,15 @@
 # Worklog:
 #
 # 2012-02-14 Arnold Johansson
-# Using components (JARs, scripts, etc) from JBoss AS 6.1.0.Final 
-# Creating a base directory as TWIDDLER_HOME - twiddler-standalone.
-# All dependent JARs put in a common lib directory.
-# Script (this) is modified and put in bin directory
-# Tested on OSX 10.7.3 with JavaSE 1.6.0_31 against JBoss AS 7.1.1.Final (localhost:1090)
-
+#   Using components (JARs, scripts, etc) from JBoss AS 6.1.0.Final 
+#   Creating a base directory as TWIDDLER_HOME - twiddler-standalone.
+#   All dependent JARs put in a common lib directory.
+#   Script (this) is modified and put in bin directory
+#   Tested on OSX 10.7.3 with JavaSE 1.6.0_31 against JBoss AS 7.1.1.Final (localhost:1090)
+# 2013-08-13 @nevenc
+#   Updated classpath and libraries to use only JBoss AS7 libraries
+#   Movied twiddle.jar into lib folder (and updated classpath)
+#
 
 # Extract the directory and the program name
 # takes care of symlinks
